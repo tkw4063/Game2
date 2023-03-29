@@ -43,41 +43,40 @@ Part 2
  	-create trust group – as the dinosaurs trust the astronaut add them to this group
   * Soda replicator function
    -Intakes rocks
-	Produces soda
-o	Mars Rocks group
-	Keeps track of how many of the sodas is in the astronauts pockets
-	Add rocks when they are picked up
-	Removes rocks when they are placed in the replicator
-o	Win Screen function
-	Once you gain the trust of all the dinosaurs, triggers an end scene with you as the cult leader
-o	Lose Screen function
-	If the dinosaurs attack you before you can become the cult leader then trigger cutscene of you dead
-•	Overview of the user interface:
-o	Movement:
-	The player controls the astronaut by moving them with the keypad
-	Picking up rocks/soda will be done by standing in front of it and pressing a specific key
-o	View:
-	On the screen the player will see the setting, spaceship, dinosaurs, etc.
-	The player will also be able to see their pocket this will have a counter for the rocks and sodas 
-•	Potential technical challenges: 
-o	I want to try to get my “attack” feature to be distance based but that may not be feasible – I’m going to have to do some investigating into pygames distance measuring ability and if it can’t then maybe I can use Euclidian/vector distance on the position points
-o	It would be nice to have movement where when I go to the end up the screen the background adjusts – for example entering the space shuttle – I will also have to do some research to figure out that one. I’m sure its possible I’m just not sure how yet. 
-Part 3 – I am working alone
+ 	 -Produces soda
+  * Mars Rocks group
+   -Keeps track of how many of the sodas is in the astronauts pockets
+   -Add rocks when they are picked up
+   -Removes rocks when they are placed in the replicator
+  * Win Screen function -Once you gain the trust of all the dinosaurs, triggers an end scene with you as the cult leader
+ 	* Lose Screen function - If the dinosaurs attack you before you can become the cult leader then trigger cutscene of you dead
+*	Overview of the user interface:
+  * Movement:
+    -The player controls the astronaut by moving them with the keypad
+   	-Picking up rocks/soda will be done by standing in front of it and pressing a specific key
+  * View:
+    -On the screen the player will see the setting, spaceship, dinosaurs, etc.
+    -The player will also be able to see their pocket this will have a counter for the rocks and sodas 
+*	Potential technical challenges: 
+  *	I want to try to get my “attack” feature to be distance based but that may not be feasible – I’m going to have to do some investigating into pygames distance measuring ability and if it can’t then maybe I can use Euclidian/vector distance on the position points
+  *	It would be nice to have movement where when I go to the end up the screen the background adjusts – for example entering the space shuttle – I will also have to do some research to figure out that one. I’m sure its possible I’m just not sure how yet. 
+Part 3 – I am working alone  
+
 Part 4
-•	Milestone 1: March 15
-o	Have background
-o	Have Space shuttle with screen movement
-o	Have astronaut moving on screen
-•	Milestone 2: March 29
-o	Have rocks on screen
-o	Have the astronaut able to pick up rocks
-o	Have the astronaut placing rocks in the replicator and soda being collected
-o	Have dinosaurs on screen with thought bubbles
-o	Astronaut can give dinosaurs soda
-•	Milestone 3: April 12
-o	Win screen
-o	Lose screen
-o	Intro screen
-•	Final Game Submission: April 29
-o	Have people playtest between April 12 and this date so I can fix any bugs
+*	Milestone 1: March 15
+ 	* Have background
+  *	Have Space shuttle with screen movement
+  *	Have astronaut moving on screen
+*	Milestone 2: March 29
+  *	Have rocks on screen
+  *	Have the astronaut able to pick up rocks
+  *	Have the astronaut placing rocks in the replicator and soda being collected
+  *	Have dinosaurs on screen with thought bubbles
+  *	Astronaut can give dinosaurs soda
+*	Milestone 3: April 12
+  *	Win screen
+  *	Lose screen
+  *	Intro screen
+*	Final Game Submission: April 29
+  	*Have people playtest between April 12 and this date so I can fix any bugs
   

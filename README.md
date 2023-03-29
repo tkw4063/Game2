@@ -59,7 +59,8 @@ Part 2
     -The player will also be able to see their pocket this will have a counter for the rocks and sodas 
 *	Potential technical challenges: 
   *	I want to try to get my “attack” feature to be distance based but that may not be feasible – I’m going to have to do some investigating into pygames distance measuring ability and if it can’t then maybe I can use Euclidian/vector distance on the position points
-  *	It would be nice to have movement where when I go to the end up the screen the background adjusts – for example entering the space shuttle – I will also have to do some research to figure out that one. I’m sure its possible I’m just not sure how yet. 
+  *	It would be nice to have movement where when I go to the end up the screen the background adjusts – for example entering the space shuttle – I will also have to do some research to figure out that one. I’m sure its possible I’m just not sure how yet.  
+  
 Part 3 – I am working alone  
 
 Part 4

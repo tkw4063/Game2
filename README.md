@@ -2,7 +2,7 @@
 
 Project Proposal
 Part 1
-Type: Role-playing
+* Type: Role-playing
 * Overview of the game: The plot of my game will be centered around an astronaut landing on Mars to explore and discovering that instead of Mars being uninhabited, like we all think, it has dinosaurs on it. The dinosaurs have made a cult on mars. The astronaut then has to gain the trust of the dinosaurs, she does this by providing them with soda. She must gain the trust of all the dinosaurs, becoming their cult leader, before they can kill her. 
 * Description of your gimmick: There will be thought bubbles that appear over the dinosaurs heads to reflect their trust level of the astronaut. These thoughts will show the progression of the astronaut becoming the cult leader.
 * Description of the game mechanics: 
@@ -33,19 +33,16 @@ Part 2
   * Astronaut Class
     -Initialize astronaut 
     -Movement function - take in arrow key presses and move 
-    -Pick up function – for picking up rocks and sodas
-* Adds rocks to rocks group
-* Pocket function 
-•	Keeps track of number of rocks and sodas
-•	Updates pocket contents on screen 
-o	Dinosaur Sprite Class
-	Creates the dinosaurs
-	Counter to keeps track of how many sodas have been given to the dinosaur
-	thought bubble function to show trust level in astronaut
-	attack function – I want to try to get this to be distance based, so when the distance between the astronaut and the dinosaur is less than a specific amount the dinosaur attacks and does damage (ideally this could scale with the trust – as the dinosaur trusts you, then you can get closer to it)
-	create trust group – as the dinosaurs trust the astronaut add them to this group
-o	Soda replicator function
-	Intakes rocks
+    -Pick up function – for picking up rocks and sodas; Adds rocks to rocks group
+    -Pocket function - Keeps track of number of rocks and sodas; Updates pocket contents on screen 
+ * Dinosaur Sprite Class
+  -Creates the dinosaurs
+  -Counter to keeps track of how many sodas have been given to the dinosaur
+  -thought bubble function to show trust level in astronaut
+ 	-attack function – I want to try to get this to be distance based, so when the distance between the astronaut and the dinosaur is less than a specific amount the dinosaur attacks and does damage (ideally this could scale with the trust – as the dinosaur trusts you, then you can get closer to it)
+ 	-create trust group – as the dinosaurs trust the astronaut add them to this group
+  * Soda replicator function
+   -Intakes rocks
 	Produces soda
 o	Mars Rocks group
 	Keeps track of how many of the sodas is in the astronauts pockets

@@ -2,40 +2,40 @@
 
 Project Proposal
 Part 1
-*Type: Role-playing
-•	Overview of the game: The plot of my game will be centered around an astronaut landing on Mars to explore and discovering that instead of Mars being uninhabited, like we all think, it has dinosaurs on it. The dinosaurs have made a cult on mars. The astronaut then has to gain the trust of the dinosaurs, she does this by providing them with soda. She must gain the trust of all the dinosaurs, becoming their cult leader, before they can kill her. 
-•	Description of your gimmick: There will be thought bubbles that appear over the dinosaurs heads to reflect their trust level of the astronaut. These thoughts will show the progression of the astronaut becoming the cult leader.
-•	Description of the game mechanics: 
-o	The astronaut moves left and right
-o	Has pockets in the spacesuit to carry items – this will just be an inventory list on the screen
-o	Soda replicator – on the space shuttle produces soda, fueled by mars rocks 
-o	Giving the dinosaurs soda – and the dinosaur keeping track of when it has enough to trust the astronaut
-o	Dinosaur attacking the astronaut when it doesn’t trust it
-•	A list of power-ups, collectibles, or updates:
-o	Mars rocks to fuel soda replicator  
-o	Some sort of special object (maybe - dinosaur bones/asteroid) that if the astronaut finds the dinosaurs require less soda to trust her
+Type: Role-playing
+* Overview of the game: The plot of my game will be centered around an astronaut landing on Mars to explore and discovering that instead of Mars being uninhabited, like we all think, it has dinosaurs on it. The dinosaurs have made a cult on mars. The astronaut then has to gain the trust of the dinosaurs, she does this by providing them with soda. She must gain the trust of all the dinosaurs, becoming their cult leader, before they can kill her. 
+* Description of your gimmick: There will be thought bubbles that appear over the dinosaurs heads to reflect their trust level of the astronaut. These thoughts will show the progression of the astronaut becoming the cult leader.
+* Description of the game mechanics: 
+  * The astronaut moves left and right
+  * Has pockets in the spacesuit to carry items – this will just be an inventory list on the screen
+  * Soda replicator – on the space shuttle produces soda, fueled by mars rocks 
+  * Giving the dinosaurs soda – and the dinosaur keeping track of when it has enough to trust the astronaut
+  * Dinosaur attacking the astronaut when it doesn’t trust it
+*	A list of power-ups, collectibles, or updates:
+  * Mars rocks to fuel soda replicator  
+  * Some sort of special object (maybe - dinosaur bones/asteroid) that if the astronaut finds the dinosaurs require less soda to trust her
 Part 2
-•	Outline of Game Architecture: (list of main modules and describe how they interact)
-o	Intro screen function with instructions and calls the game loop
-o	Game Loop
-	Initialize the background of Mars
-	Call space shuttle class/function
-	Call Astronaut class
-	Generate mars rocks random places
-	Calls dinosaur class 
-	Calls winscreen function
-	Calls losescreen function
-o	Space shuttle class/function
-	Puts space shuttle on screen
-	Takes rocks as input and produces soda
-	Has a cool down time after producing soda – or has wait time for soda to be produces (I haven’t decided)
-	Has replicator for astronaut to come and has some sort of trigger for the replicator function
-o	Astronaut Class
-	Initialize astronaut 
-	Movement function - take in arrow key presses and move 
-	Pick up function – for picking up rocks and sodas
-•	Adds rocks to rocks group
-	Pocket function 
+*	Outline of Game Architecture: (list of main modules and describe how they interact)
+  * Intro screen function with instructions and calls the game loop
+  * Game Loop
+    -Initialize the background of Mars
+    -Call space shuttle class/function
+    -Call Astronaut class
+    -Generate mars rocks random places
+    -Calls dinosaur class 
+    -Calls winscreen function
+    -Calls losescreen function
+  * Space shuttle class/function
+    -Puts space shuttle on screen
+    -Takes rocks as input and produces soda
+    -Has a cool down time after producing soda – or has wait time for soda to be produces (I haven’t decided)
+    -Has replicator for astronaut to come and has some sort of trigger for the replicator function
+  * Astronaut Class
+    -Initialize astronaut 
+    -Movement function - take in arrow key presses and move 
+    -Pick up function – for picking up rocks and sodas
+* Adds rocks to rocks group
+* Pocket function 
 •	Keeps track of number of rocks and sodas
 •	Updates pocket contents on screen 
 o	Dinosaur Sprite Class

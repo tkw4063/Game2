@@ -68,13 +68,12 @@ Part 4
  	* Have background
   *	Have Space shuttle with screen movement
   *	Have astronaut moving on screen
-*	Milestone 2: March 29
+*	Milestone 2: April 12
   *	Have rocks on screen
   *	Have the astronaut able to pick up rocks
   *	Have the astronaut placing rocks in the replicator and soda being collected
   *	Have dinosaurs on screen with thought bubbles
   *	Astronaut can give dinosaurs soda
-*	Milestone 3: April 12
   *	Win screen
   *	Lose screen
   *	Intro screen

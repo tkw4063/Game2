@@ -79,4 +79,8 @@ Part 4
   *	Intro screen
 *	Final Game Submission: April 29
   	*Have people playtest between April 12 and this date so I can fix any bugs
+   
+Notes: 
+* add a bridge to canyon
+* look into weird slowdown
   

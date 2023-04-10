@@ -3,7 +3,7 @@ from textobj import text_objects
 
 def Trust(surface,font,count):
     #print("trust")
-    bubble = pygame.image.load("C:/Users/tkw40/Documents/Clemson/Student/CPCS_6160/Game2/bubble.png").convert_alpha()
+    bubble = pygame.image.load("bubble.png").convert_alpha()
     bubble = pygame.transform.scale(bubble,(375,100))
 
     if count < 5:

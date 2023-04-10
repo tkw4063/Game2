@@ -19,7 +19,7 @@ class Dino(pygame.sprite.Sprite):
     def __init__(self,pressed_keys):
         super(Dino,self).__init__()
         defaultimagesize = (90,125)
-        self.image = pygame.image.load("C:/Users/tkw40/Documents/Clemson/Student/CPCS_6160/Game2/dinosaurleft.png").convert_alpha()
+        self.image = pygame.image.load("dinosaurleft.png").convert_alpha()
         self.image = pygame.transform.scale(self.image,defaultimagesize)
         self.image.set_colorkey((255,255,255))
         self.rect = self.image.get_rect()
@@ -31,11 +31,11 @@ class Dino(pygame.sprite.Sprite):
         defaultimagesize = (90,125)
         if pressed_keys[pygame.K_LEFT]:
             self.rect.x += speed
-            self.image = pygame.image.load("C:/Users/tkw40/Documents/Clemson/Student/CPCS_6160/Game2/dinosaurright.png").convert_alpha()
+            self.image = pygame.image.load("dinosaurright.png").convert_alpha()
             self.image = pygame.transform.scale(self.image,defaultimagesize)
             self.image.set_colorkey((255,255,255))
         elif pressed_keys[pygame.K_RIGHT]:
             self.rect.x -= speed
-            self.image = pygame.image.load("C:/Users/tkw40/Documents/Clemson/Student/CPCS_6160/Game2/dinosaurleft.png").convert_alpha()
+            self.image = pygame.image.load("dinosaurleft.png").convert_alpha()
             self.image = pygame.transform.scale(self.image,defaultimagesize)
             self.image.set_colorkey((255,255,255))

@@ -4,10 +4,12 @@ import dino
 from trust import Trust
 import rocks
 
+#dir = "~/Game2/"
+
 #Standard sizes
 SCREEN_SIZE = SCREEN_WIDTH, SCREEN_HEIGHT = 1000, 650
 imagesize = (90,125)
-bg = pygame.image.load("C:/Users/tkw40/Documents/Clemson/Student/CPCS_6160/Game2/mars.jpg")
+bg = pygame.image.load("mars.jpg")
 pygame.font.init()
 font = pygame.font.SysFont("Comic Sans MS", 20)
 # Import locals for key binding
@@ -29,12 +31,17 @@ screen = pygame.display.set_mode(SCREEN_SIZE)
 
 player = spaceman.man(imagesize)
 dinog = dino.Dino(background_pos)
-shuttle = pygame.image.load("C:/Users/tkw40/Documents/Clemson/Student/CPCS_6160/Game2/spaceshuttle.png").convert_alpha()
+shuttle = pygame.image.load("spaceshuttle.png").convert_alpha()
 shuttle = pygame.transform.scale(shuttle,(600,600))
-inside = pygame.image.load("C:/Users/tkw40/Documents/Clemson/Student/CPCS_6160/Game2/inside.png").convert_alpha()
+inside = pygame.image.load("inside.png").convert_alpha()
 inside = pygame.transform.scale(inside,(200,200))
 
 count = 0 #trust count
+
+x = random.randrange(500,800)
+y = random.randrange(450,650)
+r = rocks.Rocks(x,y)
+
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -42,7 +49,7 @@ while True:
             sys.exit()
     pressed_keys = pygame.key.get_pressed()
 
-    #player.movement(pressed_keys)
+    player.movement(pressed_keys)
     spacem = pygame.sprite.Group()
     spacem.add(player)
     dinosaur = pygame.sprite.Group()
@@ -68,10 +75,7 @@ while True:
     spacem.draw(screen)
     dinosaur.draw(screen)
 
-    x = random.randrange(background_pos,400)
-    y = 400
-
-    r = rocks.Rocks(x,y)
+    r.movement(pressed_keys)
     rockgr.add(r)
     rockgr.draw(screen)
 

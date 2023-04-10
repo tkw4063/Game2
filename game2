@@ -1,0 +1,20 @@
+import pygame, sys, os, random
+
+#Standard sizes
+SCREEN_SIZE = SCREEN_WIDTH, SCREEN_HEIGHT = 1000, 600
+imagesize = (40,40)
+
+# Import locals for key binding
+from pygame.locals import (
+    K_UP,
+    K_DOWN,
+    K_LEFT,
+    K_RIGHT,
+    K_ESCAPE,
+    KEYDOWN,
+    QUIT,
+)
+
+pygame.init()
+pygame.display.set_caption("Game 2")
+surface = pygame.display.set_mode(SCREEN_SIZE)

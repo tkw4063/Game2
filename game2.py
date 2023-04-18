@@ -23,14 +23,15 @@ from pygame.locals import (
     QUIT,
 )
 
-background_speed = 2
+universal_speed = 2
+background_speed = universal_speed
 background_pos = 0
 pygame.init()
 pygame.display.set_caption("Game 2")
 screen = pygame.display.set_mode(SCREEN_SIZE)
 
-player = spaceman.man(imagesize)
-dinog = dino.Dino(background_pos)
+player = spaceman.man(universal_speed,imagesize)
+dinog = dino.Dino(universal_speed,background_pos)
 shuttle = pygame.image.load("spaceshuttle.png").convert_alpha()
 shuttle = pygame.transform.scale(shuttle,(600,600))
 inside = pygame.image.load("inside.png").convert_alpha()
@@ -39,7 +40,7 @@ inside = pygame.transform.scale(inside,(200,200))
 count = 0 #trust count
 
 x = random.randrange(500,800)
-y = random.randrange(450,650)
+y = random.randrange(450,640)
 r = rocks.Rocks(x,y)
 
 while True:
@@ -69,18 +70,26 @@ while True:
     screen.blit(shuttle,(background_pos-50,75))
     screen.blit(inside,(background_pos+150,320))
 
-    dinog.movement(pressed_keys)
-    dinosaur.add(dinog)
+    print("bg pos: " + str(background_pos))
 
+    # dinog.movement(pressed_keys)
+    # dinosaur.add(dinog)
+    #
     spacem.draw(screen)
-    dinosaur.draw(screen)
-
-    r.movement(pressed_keys)
-    rockgr.add(r)
-    rockgr.draw(screen)
-
-    if pygame.sprite.groupcollide(spacem,dinosaur,False,False):
-        count += 1
-        Trust(screen,font,count)
-
+    # dinosaur.draw(screen)
+    #
+    # r.movement(pressed_keys)
+    # rockgr.add(r)
+    #
+    # if pygame.sprite.groupcollide(spacem,dinosaur,False,False):
+    #     Trust(screen,font,count)
+    #
+    # if pygame.sprite.groupcollide(spacem,rockgr,False,True):
+    #     count +=1
+    #     x = random.randrange(100,500)
+    #     y = random.randrange(340,640)
+    #     r = rocks.Rocks(x,y)
+    #     rockgr.add(r)
+    #
+    # rockgr.draw(screen)
     pygame.display.flip()

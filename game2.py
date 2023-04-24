@@ -6,6 +6,7 @@ import rocks
 from movement import move
 from rockdraw import initrocks
 from rockcount import rockcounting
+from rockcount import sodacounting
 from pocket import inventory
 
 
@@ -54,7 +55,7 @@ while True:
 
     player.movement(pressed_keys,background_pos)
 
-    background_pos = backmove(screen,pressed_keys,background_pos,universal_speed)
+    background_pos,repgp = backmove(screen,pressed_keys,background_pos,universal_speed)
     inventory(screen,rcount,scount)
 
     #print("bg pos: " + str(background_pos))
@@ -74,6 +75,7 @@ while True:
 
     r,rcount,rockgr = rockcounting(pressed_keys,background_pos,r,rockgr,spacem,rcount)
 
+    rcount, scount = sodacounting(screen,rcount,scount,spacem,repgp)
 
     rockgr.draw(screen)
     pygame.display.flip()

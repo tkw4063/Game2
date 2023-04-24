@@ -11,9 +11,10 @@ class Rocks(pygame.sprite.Sprite):
         self.rect.x = x
         self.rect.y = y
 
-    def movement(self,pressed_keys):
+    def movement(self,pressed_keys,background_pos):
         speed = 2
-        if pressed_keys[pygame.K_LEFT]:
+        #print(str(self.rect.x))
+        if pressed_keys[pygame.K_LEFT] and background_pos<0:
             self.rect.x += speed
-        if pressed_keys[pygame.K_RIGHT]:
+        if pressed_keys[pygame.K_RIGHT] and background_pos>-900:
             self.rect.x -= speed

@@ -3,13 +3,23 @@ import spaceman
 import dino
 from trust import Trust
 import rocks
+from movement import move
+from rockdraw import initrocks
+from rockcount import rockcounting
+from pocket import inventory
+
 
 #dir = "~/Game2/"
 
 #Standard sizes
-SCREEN_SIZE = SCREEN_WIDTH, SCREEN_HEIGHT = 1000, 650
 imagesize = (90,125)
-bg = pygame.image.load("mars.jpg")
+pygame.init()
+pygame.display.set_caption("Game 2")
+SCREEN_SIZE = SCREEN_WIDTH, SCREEN_HEIGHT = 1000, 650
+screen = pygame.display.set_mode(SCREEN_SIZE)
+
+from backgroundmove import backmove
+
 pygame.font.init()
 font = pygame.font.SysFont("Comic Sans MS", 20)
 # Import locals for key binding
@@ -26,22 +36,14 @@ from pygame.locals import (
 universal_speed = 2
 background_speed = universal_speed
 background_pos = 0
-pygame.init()
-pygame.display.set_caption("Game 2")
-screen = pygame.display.set_mode(SCREEN_SIZE)
 
 player = spaceman.man(universal_speed,imagesize)
 dinog = dino.Dino(universal_speed,background_pos)
-shuttle = pygame.image.load("spaceshuttle.png").convert_alpha()
-shuttle = pygame.transform.scale(shuttle,(600,600))
-inside = pygame.image.load("inside.png").convert_alpha()
-inside = pygame.transform.scale(inside,(200,200))
 
-count = 0 #trust count
 
-x = random.randrange(500,800)
-y = random.randrange(450,640)
-r = rocks.Rocks(x,y)
+rcount = 0 #rock count
+scount = 0 #soda count
+r = initrocks(background_pos)
 
 while True:
     for event in pygame.event.get():
@@ -50,46 +52,28 @@ while True:
             sys.exit()
     pressed_keys = pygame.key.get_pressed()
 
-    player.movement(pressed_keys)
-    spacem = pygame.sprite.Group()
-    spacem.add(player)
-    dinosaur = pygame.sprite.Group()
+    player.movement(pressed_keys,background_pos)
+
+    background_pos = backmove(screen,pressed_keys,background_pos,universal_speed)
+    inventory(screen,rcount,scount)
+
+    #print("bg pos: " + str(background_pos))
     rockgr = pygame.sprite.Group()
+    spacem = pygame.sprite.Group()
+    dinosaur = pygame.sprite.Group()
+    spacem.add(player)
 
-    if pressed_keys[pygame.K_LEFT]:
-        background_pos += background_speed
-    elif pressed_keys[pygame.K_RIGHT]:
-        background_pos -= background_speed
+    dinog.dmove(pressed_keys,background_pos)
+    dinosaur.add(dinog)
 
-    if background_pos > 0:
-        background_pos = 0
-    elif background_pos < -900:
-        background_pos = -900
-
-    screen.blit(bg,(background_pos,-100))
-    screen.blit(shuttle,(background_pos-50,75))
-    screen.blit(inside,(background_pos+150,320))
-
-    print("bg pos: " + str(background_pos))
-
-    # dinog.movement(pressed_keys)
-    # dinosaur.add(dinog)
-    #
     spacem.draw(screen)
-    # dinosaur.draw(screen)
-    #
-    # r.movement(pressed_keys)
-    # rockgr.add(r)
-    #
-    # if pygame.sprite.groupcollide(spacem,dinosaur,False,False):
-    #     Trust(screen,font,count)
-    #
-    # if pygame.sprite.groupcollide(spacem,rockgr,False,True):
-    #     count +=1
-    #     x = random.randrange(100,500)
-    #     y = random.randrange(340,640)
-    #     r = rocks.Rocks(x,y)
-    #     rockgr.add(r)
-    #
-    # rockgr.draw(screen)
+    dinosaur.draw(screen)
+
+    if pygame.sprite.groupcollide(spacem,dinosaur,False,False):
+        Trust(screen,font,scount)
+
+    r,rcount,rockgr = rockcounting(pressed_keys,background_pos,r,rockgr,spacem,rcount)
+
+
+    rockgr.draw(screen)
     pygame.display.flip()

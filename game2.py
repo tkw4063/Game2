@@ -37,6 +37,7 @@ from pygame.locals import (
 universal_speed = 2
 background_speed = universal_speed
 background_pos = 0
+pos = 230
 
 player = spaceman.man(universal_speed,imagesize)
 dinog = dino.Dino(universal_speed,background_pos)
@@ -54,7 +55,7 @@ while True:
             sys.exit()
     pressed_keys = pygame.key.get_pressed()
 
-    player.x = player.movement(pressed_keys,background_pos)
+    pos = player.movement(pressed_keys,background_pos,pos)
 
     background_pos = backmove(screen,pressed_keys,background_pos,universal_speed)
 
@@ -76,9 +77,7 @@ while True:
     if pygame.sprite.groupcollide(spacem,dinosaur,False,False):
         Trust(screen,font,shitcount)
 
-    print(str(player.x))
-
-    if player.x > 104.0 and player.x < 179.0 and rcount > 0:
+    if pos > 104.0 and pos < 179.0 and rcount > 0:
         rcount, shitcount = sodacounting(rcount,screen,shitcount,player)
 
     if pygame.sprite.groupcollide(spacem,rockgr,False,True):

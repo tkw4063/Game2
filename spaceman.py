@@ -24,7 +24,7 @@ class man(pygame.sprite.Sprite):
         self.rect.x = 230
         self.rect.y = 410
 
-    def movement(self,pressed_keys,background_pos):
+    def movement(self,pressed_keys,background_pos,pos):
         if pressed_keys[K_UP]:
             self.rect.move_ip(0,-1)
         if pressed_keys[K_DOWN]:
@@ -35,6 +35,10 @@ class man(pygame.sprite.Sprite):
         if pressed_keys[K_LEFT] and background_pos==0:
             self.x = self.x - self.speed
             self.rect.x = self.x
+        if pressed_keys[K_RIGHT]:
+            pos = pos + self.speed
+        if pressed_keys[K_LEFT]:
+            pos = pos - self.speed    
 
         #print(str(self.rect.x))
 

@@ -16,3 +16,4 @@ def Trust(surface,font,count):
         thoughtrect.center = ((550),(390))
         surface.blit(bubble,((370),(360)))
         surface.blit(thoughtsurf, thoughtrect)
+    return count

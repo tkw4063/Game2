@@ -47,3 +47,5 @@ class man(pygame.sprite.Sprite):
             self.rect.x =-40
         if self.rect.x>=922:
             self.rect.x =922
+
+        return pos

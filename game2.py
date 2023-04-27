@@ -6,7 +6,7 @@ import rocks
 from movement import move
 from rockdraw import initrocks
 from rockcount import rockcounting
-from rockcount import sodacounting
+from soda import sodacounting
 from pocket import inventory
 
 
@@ -43,8 +43,9 @@ dinog = dino.Dino(universal_speed,background_pos)
 
 
 rcount = 0 #rock count
-scount = 0 #soda count
+shitcount = 0 #soda count
 r = initrocks(background_pos)
+
 
 while True:
     for event in pygame.event.get():
@@ -53,10 +54,9 @@ while True:
             sys.exit()
     pressed_keys = pygame.key.get_pressed()
 
-    player.movement(pressed_keys,background_pos)
+    player.x = player.movement(pressed_keys,background_pos)
 
-    background_pos,repgp = backmove(screen,pressed_keys,background_pos,universal_speed)
-    inventory(screen,rcount,scount)
+    background_pos = backmove(screen,pressed_keys,background_pos,universal_speed)
 
     #print("bg pos: " + str(background_pos))
     rockgr = pygame.sprite.Group()
@@ -70,12 +70,24 @@ while True:
     spacem.draw(screen)
     dinosaur.draw(screen)
 
+    r.movement(pressed_keys,background_pos)
+    rockgr.add(r)
+
     if pygame.sprite.groupcollide(spacem,dinosaur,False,False):
-        Trust(screen,font,scount)
+        Trust(screen,font,shitcount)
 
-    r,rcount,rockgr = rockcounting(pressed_keys,background_pos,r,rockgr,spacem,rcount)
+    print(str(player.x))
 
-    rcount, scount = sodacounting(screen,rcount,scount,spacem,repgp)
+    if player.x > 104.0 and player.x < 179.0 and rcount > 0:
+        rcount, shitcount = sodacounting(rcount,screen,shitcount,player)
+
+    if pygame.sprite.groupcollide(spacem,rockgr,False,True):
+        rcount = rockcounting(pressed_keys,background_pos,rockgr,spacem,rcount)
+        r = initrocks(background_pos)
+
+    #print(str(rcount))
+
+    inventory(screen,rcount,shitcount)
 
     rockgr.draw(screen)
     pygame.display.flip()

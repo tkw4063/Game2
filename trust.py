@@ -1,7 +1,7 @@
 import pygame, sys, os, random
 from textobj import text_objects
 
-def Trust(surface,font,count):
+def Trust(surface,font,count,dcount):
     #print("trust")
     bubble = pygame.image.load("bubble.png").convert_alpha()
     bubble = pygame.transform.scale(bubble,(375,100))
@@ -11,9 +11,9 @@ def Trust(surface,font,count):
         thoughtrect.center = ((550),(390))
         surface.blit(bubble,((370),(360)))
         surface.blit(thoughtsurf, thoughtrect)
-    else:
+    if count>=5:
         thoughtsurf, thoughtrect = text_objects("You are my leader!",font)
         thoughtrect.center = ((550),(390))
         surface.blit(bubble,((370),(360)))
         surface.blit(thoughtsurf, thoughtrect)
-    return count
+    return count, dcount

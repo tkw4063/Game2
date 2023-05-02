@@ -45,8 +45,7 @@ dinog = dino.Dino(universal_speed,background_pos)
 
 rcount = 0 #rock count
 scount = 0 #soda count
+dcount = 0 #dinosaur count
 r = initrocks(background_pos)
 
-
-
-main(screen,universal_speed,background_pos,pos,player,dinog,rcount,scount,r)
+main(screen,universal_speed,background_pos,pos,player,dinog,rcount,scount,r,dcount)

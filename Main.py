@@ -9,6 +9,7 @@ from rockcount import rockcounting
 from soda import sodacounting
 from pocket import inventory
 from backgroundmove import backmove
+from textobj import text_objects
 
 pygame.font.init()
 font = pygame.font.SysFont("Comic Sans MS", 20)
@@ -42,11 +43,7 @@ def main(screen,universal_speed,background_pos,pos,player,dinog,rcount,scount,r,
         rockgr.add(r)
 
         if pygame.sprite.groupcollide(spacem,dinosaur,False,False):
-            scount, dcount = Trust(screen,font,scount,dcount)
-            if scount >=5:
-                scount -= 5
-                dcount += 1
-                cond = False
+            scount, dcount = Trust(screen,font,scount,dcount,universal_speed,background_pos)
 
         if pos > 104.0 and pos < 179.0 and rcount > 0:
             rcount, scount = sodacounting(rcount,screen,scount,player)
